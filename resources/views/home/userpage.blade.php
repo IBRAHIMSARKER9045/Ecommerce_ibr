@@ -11,7 +11,7 @@
       <meta name="description" content="" />
       <meta name="author" content="" />
       <link rel="shortcut icon" href="images/favicon.png" type="">
-      <title>Famms - Fashion HTML Template</title>
+      <title>IBR_Ecommerce</title>
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="home/css/bootstrap.css" />
       <!-- font awesome style -->
@@ -27,7 +27,7 @@
          <header class="header_section">
             <div class="container">
                <nav class="navbar navbar-expand-lg custom_nav-container ">
-                  <a class="navbar-brand" href="index.html"><img width="250" src="images/logo.png" alt="#" /></a>
+                  <a class="navbar-brand" href="index.html"><img width="150"  src="home/images/logo.png" alt="#" /></a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class=""> </span>
                   </button>
@@ -122,7 +122,7 @@
          <!-- slider section -->
          <section class="slider_section ">
             <div class="slider_bg_box">
-               <img src="images/slider-bg.jpg" alt="">
+               <img src="home/images/slider-bg.jpg" alt="">
             </div>
             <div id="customCarousel1" class="carousel slide" data-ride="carousel">
                <div class="carousel-inner">
