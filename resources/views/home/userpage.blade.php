@@ -55,7 +55,7 @@
         <!-- end subscribe section -->
 
         <!-- footer client section -->
-        @include('home.footer_client')
+        @include('home.client')
 
 
         <!-- end footer client section -->
