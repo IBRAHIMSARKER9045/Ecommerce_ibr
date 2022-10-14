@@ -25,9 +25,15 @@
                         <li class="nav-item">
                            <a class="nav-link" href="blog_list.html">Blog</a>
                         </li>
+
                         <li class="nav-item">
-                           <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
+                            <a class="btn btn-primary" id="logincss" href="contact.html">Login</a>
+                         </li>
+                         <br>
+                         <li class="nav-item">
+                            <a class="btn btn-success" href="contact.html">Reg</a>
+                         </li>
+
 
                         <form class="form-inline">
                            <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
