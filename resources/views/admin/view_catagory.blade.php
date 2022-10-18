@@ -17,7 +17,7 @@
 
         padding-bottom: 20px;
      }
-     .input_clolor{
+     .input_color{
         color: rgb(241, 10, 10);
         text color: black;
 
@@ -40,9 +40,19 @@
     <!-- body -->
     <div class="main-panel">
         <div class="content-wrapper">
+          @if(session()->has('message'))
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert"
+                     aria-hidden="true">X</button>
+                {{ session()->get('message') }}
+            </div>
+
+          @endif
+
             <div class="div_center">
                 <h6 class="h1_font">Add Category</h6>
-                <form>
+                <form action="{{url('/add_catagory')}}" method="POST">
+                    @csrf
                     <input class="input_color"type="text" name="catagory" placeholder="Enter Category Name">
 
                     <input type="submit"class="btn btn-primary"name="submit" value="Add Category">
