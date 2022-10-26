@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,79 +8,92 @@
     <title>Document</title>
 
 
-<style type="text/css">
-     .div_center{
-        text-align: center;
-        padding-top: 40px;
-     }
-     .h1_font{
-        font-size: 30px;
+    <style type="text/css">
+        .div_center {
+            text-align: center;
+            padding-top: 40px;
+        }
 
-        padding-bottom: 20px;
-     }
-     .input_color{
-        color: rgb(241, 10, 10);
-        text color: black;
+        .h1_font {
+            font-size: 30px;
 
-     }
-     .center{
-        margin :  auto;
-        width: 50%;
-        border: 3px solid rgb(42, 85, 94);
-        margin-top: 30px;
-        padding: 10px;
-        text-align: center;
-     }
+            padding-bottom: 20px;
+        }
 
-     </style>
+        .input_color {
+            color: rgb(241, 10, 10);
+            text color: black;
+
+        }
+
+        .center {
+            margin: auto;
+            width: 50%;
+            border: 3px solid rgb(42, 85, 94);
+            margin-top: 30px;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
 
 
     <!-- Required meta tags -->
     @include('admin.css')
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container-scroller">
         <!--sidebar start-->
-      @include('admin.sidebar')
+        @include('admin.sidebar')
         <!-- partial -->
         @include('admin.header')
 
 
-    <!-- body -->
-    <div class="main-panel">
-        <div class="content-wrapper">
-          @if(session()->has('message'))
-            <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert"
-                aria-hidden="true">X</button>
-                {{ session()->get('message') }}
+        <!-- body -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                @if (session()->has('message'))
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
+
+                <div class="div_center">
+                    <h6 class="h1_font">Add Category</h6>
+                    <form action="{{ url('/add_catagory') }}" method="POST">
+                        @csrf
+                        <input class="input_color"type="text" name="catagory" placeholder="Enter Category Name">
+
+                        <input type="submit"class="btn btn-primary"name="submit" value="Add Category">
+                    </form>
+
+                </div>
+                <div>
+                    <table class="center">
+                        <tr>
+                            <td>Category Name |</td>
+                            <td>|Action</td>
+                        </tr>
+                        @foreach ($data as $data)
+                            <tr>
+                                <td>{{ $data->catagory_name }}</td>
+                                <td>
+                                    <a class="btn btn-danger" href="{{url('delete_catagory',$data->id)}}">Delete</a>
+                                </td>
+                        @endforeach
+                    </table>
+
+                </div>
             </div>
-
-          @endif
-
-            <div class="div_center">
-                <h6 class="h1_font">Add Category</h6>
-                <form action="{{url('/add_catagory')}}" method="POST">
-                    @csrf
-                    <input class="input_color"type="text" name="catagory" placeholder="Enter Category Name">
-
-                    <input type="submit"class="btn btn-primary"name="submit" value="Add Category">
-                </form>
-
-        </div>
-        <table class="center">
-            <tr>
-                <td>Category Name |</td>
-                <td>|Action</td>
-            </tr>
-
-
         </div>
     </div>
 
 
-    <!-- plugins:js -->
-    @include('admin.js')
 
-  </body>
+        <!-- plugins:js -->
+        @include('admin.js')
+
+</body>
+
 </html>
