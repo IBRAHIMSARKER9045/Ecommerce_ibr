@@ -27,9 +27,10 @@
         }
 
         .center {
+
             margin: auto;
             width: 50%;
-            border: 3px solid rgb(42, 85, 94);
+            border: 3px solid rgb(46, 209, 195);
             margin-top: 30px;
             padding: 10px;
             text-align: center;
@@ -70,17 +71,20 @@
 
                 </div>
                 <div>
-                    <table class="center">
+                    <table  class="center">
                         <tr>
+
                             <td>Category Name |</td>
                             <td>|Action</td>
                         </tr>
                         @foreach ($data as $data)
                             <tr>
+
                                 <td>{{ $data->catagory_name }}</td>
                                 <td>
-                                    <a class="btn btn-danger" href="{{url('delete_catagory',$data->id)}}">Delete</a>
+                                    <a onclick="return confirm('Are You Sure Delete This Catagory')" class="btn btn-danger" href="{{url('delete_catagory',$data->id)}}">Delete</a>
                                 </td>
+                            </tr>
                         @endforeach
                     </table>
 
