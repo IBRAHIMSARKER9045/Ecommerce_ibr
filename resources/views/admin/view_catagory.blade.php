@@ -22,6 +22,14 @@
         text color: black;
 
      }
+     .center{
+        margin :  auto;
+        width: 50%;
+        border: 3px solid rgb(42, 85, 94);
+        margin-top: 30px;
+        padding: 10px;
+        text-align: center;
+     }
 
      </style>
 
@@ -43,7 +51,7 @@
           @if(session()->has('message'))
             <div class="alert alert-success">
                 <button type="button" class="close" data-dismiss="alert"
-                     aria-hidden="true">X</button>
+                aria-hidden="true">X</button>
                 {{ session()->get('message') }}
             </div>
 
@@ -59,6 +67,13 @@
                 </form>
 
         </div>
+        <table class="center">
+            <tr>
+                <td>Category Name |</td>
+                <td>|Action</td>
+            </tr>
+
+
         </div>
     </div>
 
